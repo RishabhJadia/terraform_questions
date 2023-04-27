@@ -2536,3 +2536,53 @@ Answer : C
 
 
 
+terraform apply -refresh-only replaced the deprecated command terraform refresh. However, you still may find terraform refresh in the real exam until it gets updated. Keep this in mind when taking the real exam. HashiCorp does update the exams very often, and this could very well come out at the beginning of 2022 when they overhaul the existing exam as noted on the exam page that a new version would be released in early 2022.
+
+
+
+terraform plan -out=refresh just runs a terraform plan and saves a plan called refresh. I was being a little tricky here but just know that this isn't how to refresh your state file
+
+terraform init -upgrade is the command to use if you want Terraform to upgrade your existing downloaded providers
+
+terraform get -update is used to download and update modules that are referenced in your Terraform configuration files
+
+
+True or False? When using Terraform Cloud, committing code to your version control system (VCS) can automatically trigger a speculative plan.
+True
+
+True or False? When developing Terraform code, you must include a provider block for each unique provider so Terraform knows which ones you want to download and use.
+False
+
+Your team is using Terraform, and multiple team members need to be able to manage the infrastructure. You need to support state locking to reduce the chance of corrupting the state file. What backends can you use to meet these requirements? (select three)
+- Kubernetes, Consul, and S3 backends all support state locking. S3 supports state locking with the help of DynamoDB.
+
+Terraform enables its users to interact with a platform's API without requiring the end-user to understand individual APIs for the targeted platform. This allows a user to easily provision and manage resources across many different platforms without having to understand the API for each individual backend. This benefit makes users more efficient and reduces the administrative burden for understanding and troubleshooting each one.
+
+Terraform can support any platform that has an API, including public, private, and other offerings on the market today. If it has an API, a provider can be written to allow Terraform to manage it. Don't believe me? Check out the Spotify or Domino's Pizza Terraform provider :)
+
+Lastly, by using providers, HashiCorp can enable the extensibility of Terraform without having to modify Terraform core for each supported platform. Each provider, or plugin, can be downloaded as needed to extend the functionality of Terraform itself.
+
+Which of the following is true about working with modules?
+Modules can be called one or more times by a parent module.
+
+Rather than storing them in plaintext, where should you store the credentials
+- outside of terraform, envirnment variable, credential file
+
+Which of the following are advantages of using infrastructure as code (IaC) for your day-to-day operations? (select three)
+IaC enables API-driven workflows 
+When developing IaC, organizations can now use a Version Control System, such as GitHub, GitLab, Bitbucket, etc. to store and version its code.
+enable self service for develper
+
+True or False? In both Terraform OSS and Terraform Cloud/Enterprise, workspaces provide similar functionality of using a separate state file for each workspace.
+True
+
+You want to use Terraform to deploy resources across your on-premises infrastructure and a public cloud provider. However, your internal security policies require that you have full control over both the operating system and deployment of Terraform binaries. What versions of Terraform can you use for this? (select two)
+oss/cli and enterprise
+
+True or False? Terraform can only manage dependencies between resources if the depends_on argument is explicitly set for the dependent resources.
+False
+
+The most common source of dependencies is an implicit dependency between two resources or modules. 
+That means that Terraform builds a dependency map (aka resource graph) to help determine what resources it can create in parallel, 
+and what resources are dependent on others based on interpolation used within the configuration.
+
