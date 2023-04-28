@@ -2586,3 +2586,31 @@ The most common source of dependencies is an implicit dependency between two res
 That means that Terraform builds a dependency map (aka resource graph) to help determine what resources it can create in parallel, 
 and what resources are dependent on others based on interpolation used within the configuration.
 
+
+
+terraform delete and terraform initialize are not valid Terraform CLI commands.
+
+Correct Answers:
+
+The terraform apply -refresh-only command creates a plan whose goal is only to update the Terraform state and any root module output values to match changes made to remote objects outside of Terraform.
+
+he terraform fmt command is used to rewrite Terraform configuration files to a canonical format and style.
+
+The terraform workspace select command is used to choose a different workspace to use for further operations.
+
+The terraform show command is used to provide human-readable output from a state or plan file. This can be used to inspect a plan to ensure that the planned operations are expected, or to inspect the current state as Terraform sees it.
+
+The terraform login command can be used to automatically obtain and save an API token for Terraform Cloud, Terraform Enterprise, or any other host that offers Terraform services.
+
+True or False? Terraform is designed to work only with public cloud platforms, and organizations that wish to use it for on-premises infrastructure (private cloud) should look for an alternative solution.
+False
+
+Scenario: You are deploying a new application and want to deploy it to multiple AWS regions within the same configuration file. Which of the following features will allow you to configure this?
+Multiple provider block using an alise
+
+You have a Terraform configuration file defining resources to deploy on VMware, yet there is no related state file. You have successfully run terraform init already. What happens when you run a terraform apply?
+- Terraform will scan the VMware infrastructure, create a new state file, and deploy the new resources as defined in the configuration file. 
+
+You have a Terraform configuration file with no defined resources. However, there is a related state file for resources that were created on AWS. What happens when you run a terraform apply?
+- Terraform will destroy all of the resource
+
