@@ -2614,3 +2614,6 @@ You have a Terraform configuration file defining resources to deploy on VMware, 
 You have a Terraform configuration file with no defined resources. However, there is a related state file for resources that were created on AWS. What happens when you run a terraform apply?
 - Terraform will destroy all of the resource
 
+True or False? The terraform plan -refresh-only command is used to create a plan whose goal is only to update the Terraform state to match any changes made to remote objects outside of Terraform.
+True
+
